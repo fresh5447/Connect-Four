@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <title>Twitter Cards</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body class="container">
+    <div>
+        <div class="">
+        <form >
+        	<input type="text" placeholder="choose column" id="columnValue" />
+        	<button type="button" onClick="placeRed();">Place Red</button>
+        	<button type="button" onClick="placeBlack();">Place Black</button>
+        	<button type="button" onClick="clearBoard();">Clear Board</button>
+        	<script>
+
+        		function placeRed(){ 
+        			var col = document.getElementById('columnValue').value;
+        			console.log(addRedPiece(Number(col)-1));
+        		};
+
+        		function placeBlack(){ 
+        			var col = document.getElementById('columnValue').value; 
+        			console.log(addBlackPiece(Number(col)-1));
+        		};
+
+        		function clearBoard(){
+        			createBoard();
+        			alert("new game started!")
+        		};
+
+
+
+        	</script>
+        </form>
+            <div class="col-md-10">
+                <div class="entire-board">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Col 1</th>
+                                <th>Col 2</th>
+                                <th>Col 3</th>
+                                <th>Col 4</th>
+                                <th>Col 5</th>
+                                <th>Col 6</th>
+                                <th>Col 7</th>
+                                <th>Col 8</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="00"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td id="70"></td>
+                            </tr>
+                            <tr>
+                                <td id="01"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td id="71"></td>
+                            </tr>
+                            <tr>
+                                <td id="02"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td id="72"></td>
+                            </tr>
+                            <tr>
+                                <td id="03"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td id="73"></td>
+                            </tr>
+                            <tr>
+                                <td id="04"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td id="74"></td>
+                            </tr>
+                            <tr>
+                                <td id="05"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td id="75"></td>
+                            </tr>
+                            <tr>
+                                <td id="06"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td id="76"></td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./connectFour.js"></script>
+</body>
+
+</html>

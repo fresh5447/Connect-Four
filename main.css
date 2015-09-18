@@ -1,0 +1,13 @@
+.entire-board{
+	margin: 50 50 10 10;
+}
+
+.checker-row{	
+
+}
+
+td{
+	width: 50px;
+	height: 50px;
+	border-style: solid;
+}

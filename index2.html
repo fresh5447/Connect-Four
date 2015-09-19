@@ -1,0 +1,30 @@
+   <link rel="stylesheet" href="./main.css">
+<script>
+    var myTable= "<table id='table';><tr><td>Col 1</td>";
+    myTable+= "<td>Col 2</td>";
+    myTable+= "<td>Col 3</td>";
+    myTable+= "<td>Col 4</td>";
+    myTable+= "<td>Col 5</td>";
+    myTable+= "<td>Col 6</td>";
+    myTable+= "<td>Col 7</td>";
+    myTable+="<td>Col 8</td></tr>";
+
+  for (var i=0; i<7; i++) {
+    myTable+="<tr><td id='00'> " + i + i + "</td>";
+    myTable+="<td>"  + i + (i+1) + "</td>";
+    myTable+="<td>"  + i + (i+1) + "</td>";
+    myTable+="<td>"  + i + (i+1) + "</td>";
+    myTable+="<td>"  + i + (i+1) + "</td>";
+    myTable+="<td>"  + i + (i+1) + "</td>";
+    myTable+="<td>"  + i + (i+1) + "</td>";
+    myTable+="<td>"  + i + (i+1) + "</td></tr>";
+
+  }  
+   myTable+="</table>";
+
+   for (var i = 0;i >= 7; i--) {
+       
+   };
+
+ document.write( myTable);
+</script>

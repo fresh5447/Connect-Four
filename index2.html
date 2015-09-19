@@ -1,30 +1,55 @@
-   <link rel="stylesheet" href="./main.css">
+<html>
+<head>
+    <title>Connect Four</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body class="container">
+    <div>
+        <div class="">
+        <form >
+        	<input type="text" placeholder="choose column" id="columnValue" />
+        	<button type="button" onClick="placeRed();">Place Red</button>
+        	<button type="button" onClick="placeBlack();">Place Black</button>
+        	<button type="button" onClick="clearBoard();">Clear Board</button>
+        	<script>
+
+        		function placeRed(){ 
+        			var col = document.getElementById('columnValue').value;
+        			console.log(addRedPiece(Number(col)-1));
+        		};
+
+        		function placeBlack(){ 
+        			var col = document.getElementById('columnValue').value; 
+        			console.log(addBlackPiece(Number(col)-1));
+        		};
+
+        		function clearBoard(){
+        			createBoard();
+        			alert("new game started!")
+        		};
+        	</script>
+        </form>
 <script>
-    var myTable= "<table id='table';><tr><td>Col 1</td>";
-    myTable+= "<td>Col 2</td>";
-    myTable+= "<td>Col 3</td>";
-    myTable+= "<td>Col 4</td>";
-    myTable+= "<td>Col 5</td>";
-    myTable+= "<td>Col 6</td>";
-    myTable+= "<td>Col 7</td>";
-    myTable+="<td>Col 8</td></tr>";
+    var myTable= "<table id='table'><tbody><tr>";
+    
+    // header
+    for (var col=0; col<8; col++) {
+      myTable+= "<td>Col " + (col+1) +"</td>";
+    }
+    myTable+= "</tr>\n";
 
-  for (var i=0; i<7; i++) {
-    myTable+="<tr><td id='00'> " + i + i + "</td>";
-    myTable+="<td>"  + i + (i+1) + "</td>";
-    myTable+="<td>"  + i + (i+1) + "</td>";
-    myTable+="<td>"  + i + (i+1) + "</td>";
-    myTable+="<td>"  + i + (i+1) + "</td>";
-    myTable+="<td>"  + i + (i+1) + "</td>";
-    myTable+="<td>"  + i + (i+1) + "</td>";
-    myTable+="<td>"  + i + (i+1) + "</td></tr>";
-
-  }  
-   myTable+="</table>";
-
-   for (var i = 0;i >= 7; i--) {
-       
-   };
-
- document.write( myTable);
+  for (var row=0; row<7; row++) {
+    myTable+= "<tr>";
+    for (var col=0; col<8; col++) {
+      var cellID = "" + col + row;
+      myTable+= "<td id='" + cellID + "'/>";
+    }
+    myTable+= "</tr>\n";
+  }
+  myTable+="</tbody></table>";
+  document.write( myTable);
 </script>
+<script src="./connectFour.js"></script>
+</body>
+</html>

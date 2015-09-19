@@ -1,20 +1,29 @@
+var columns = [];
 
-
-X = "black";
-O = "red";
-
-var columns = createBoard();
-
-function createBoard() {
+var createBoard = function() {
 	columns = [];
 	for (var column = 0; column < 8; column++) {
-		columns[column] = [];
+	  columns[column] = [];
 	  for (var row = 0; row < 7; row++) {
-      columns[column][row] = "-";
+        columns[column][row] = "-";
+        updateCell(column, row);
 	  }
 	}
 	return columns;
 }
+
+var updateCell = function(column, row){
+	var cellId = "" + column + row;
+	if (columns[column][row] == 'X') {
+		document.getElementById(cellId).setAttribute('style', 'background-color: black');
+	} else if (columns[column][row] == 'O') {
+		document.getElementById(cellId).setAttribute('style', 'background-color: red');
+	} else {
+	    document.getElementById(cellId).setAttribute('style', 'background-color: white');
+    }
+}
+
+columns = createBoard();
 
 // Display Empty Board/ Grid
 
@@ -29,14 +38,6 @@ var getGridText = function(){
 		return result;
 }
 
-var updateCell = function(column, row){
-	var cellId = "" + column + row;
-	if (columns[column][row] == 'X') {
-		document.getElementById(cellId).setAttribute('style', 'background-color: black');
-	} else	{
-		document.getElementById(cellId).setAttribute('style', 'background-color: red');
-	}
-}
 
 // Need To Add Black Piece to Empty Row
 var addBlackPiece = function (column) {
@@ -91,13 +92,20 @@ var columnWinner = function(column){
 	var winner = "-";
 	var count = 0;
 	for (var row = 0; row < columns[column].length; row++){
-		if(winner == columns[column][row]){
-			count += 1;
-			if(count === 4){
+	    var cellValue = columns[column][row];
+	    if (cellValue == '-') {
+	      count = 0;
+	    } else {
+	      if (cellValue == winner) {
+	        count++;
+			if(count === 3){
 				return winner
 			}
+		  } else {
+		    count = 0;
+		  }
+		  winner = cellValue;
 		}
-		winner = columns[column][row];
 	}
 	return "-";
 }
@@ -129,8 +137,7 @@ RED_ON_BLACK += "--O-----\n";
 RED_ON_BLACK += "--X-----\n";
 
 
-var assert = function(test, failMessage){
-
+var assert = function(test, failMessage) {
 	if (!test){
 	 throw failMessage 
 	}

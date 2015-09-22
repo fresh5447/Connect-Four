@@ -35,7 +35,7 @@
     
     // header
     for (var col=0; col<8; col++) {
-      myTable+= "<td>Col " + (col+1) +"</td>";
+      myTable+= "<td>" + (col+1) +"</td>";
     }
     myTable+= "</tr>\n";
 
@@ -43,7 +43,7 @@
     myTable+= "<tr>";
     for (var col=0; col<8; col++) {
       var cellID = "" + col + row;
-      myTable+= "<td id='" + cellID + "'/>";
+      myTable+= "<td><div id='" + cellID + "' class='circle'/></td>";
     }
     myTable+= "</tr>\n";
   }

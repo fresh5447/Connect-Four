@@ -19,7 +19,7 @@ var updateCell = function(column, row){
 	} else if (columns[column][row] == 'O') {
 		document.getElementById(cellId).setAttribute('style', 'background-color: red');
 	} else {
-	    document.getElementById(cellId).setAttribute('style', 'background-color: white');
+	    document.getElementById(cellId).setAttribute('style', 'background-color: #F0F0CC');
     }
 }
 
@@ -110,7 +110,43 @@ var columnWinner = function(column){
 	return "-";
 }
 
+var createTable = function() {
+  var myTable= "<table id='table'><tbody><tr>";
+    
+  // header
+  for (var col=0; col<8; col++) {
+    myTable+= "<td>" + (col+1) +"</td>";
+  }
+  myTable+= "</tr>\n";
 
+  for (var row=0; row<7; row++) {
+    myTable+= "<tr>";
+    for (var col=0; col<8; col++) {
+      var cellID = "" + col + row;
+      myTable+= "<td><div id='" + cellID + "' class='circle'/></td>";
+    }
+    myTable+= "</tr>\n";
+  }
+  myTable+="</tbody></table>";
+  return myTable;
+}
+
+
+var placeRed = function(){ 
+  var col = document.getElementById('columnValue').value;
+  console.log(addRedPiece(Number(col)-1));
+};
+
+var  placeBlack = function(){ 
+  var col = document.getElementById('columnValue').value; 
+  console.log(addBlackPiece(Number(col)-1));
+};
+
+var clearBoard = function(){
+  createBoard();
+  alert("new game started!")
+};
+  
 //----------TESTS----------------//
 
 EMPTY_ROW = "--------\n"

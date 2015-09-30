@@ -113,28 +113,28 @@ var columnWinner = function(column){
 
 //----------TESTS----------------//
 
-EMPTY_ROW = "--------\n"
+// EMPTY_ROW = "--------\n"
 
-EMPTY_STRING = "";
-ONE_BLACK = "";
-ANOTHER_BLACK = "";
-ONE_RED = "";
-for (var i = 0; i < 6; i++) {
-	EMPTY_STRING += EMPTY_ROW;
-	ONE_BLACK += EMPTY_ROW;
-	ANOTHER_BLACK += EMPTY_ROW;
-	ONE_RED += EMPTY_ROW;
-}
-ONE_BLACK += "X-------" + "\n";
-ANOTHER_BLACK += "------X-" + "\n"
-ONE_RED +=  "O-------" + "\n";
-EMPTY_STRING += EMPTY_ROW;
-RED_ON_BLACK = "";
-for (var i = 0; i < 5; i++) {
-	RED_ON_BLACK += EMPTY_ROW;
-}
-RED_ON_BLACK += "--O-----\n";
-RED_ON_BLACK += "--X-----\n";
+// EMPTY_STRING = "";
+// ONE_BLACK = "";
+// ANOTHER_BLACK = "";
+// ONE_RED = "";
+// for (var i = 0; i < 6; i++) {
+// 	EMPTY_STRING += EMPTY_ROW;
+// 	ONE_BLACK += EMPTY_ROW;
+// 	ANOTHER_BLACK += EMPTY_ROW;
+// 	ONE_RED += EMPTY_ROW;
+// }
+// ONE_BLACK += "X-------" + "\n";
+// ANOTHER_BLACK += "------X-" + "\n"
+// ONE_RED +=  "O-------" + "\n";
+// EMPTY_STRING += EMPTY_ROW;
+// RED_ON_BLACK = "";
+// for (var i = 0; i < 5; i++) {
+// 	RED_ON_BLACK += EMPTY_ROW;
+// }
+// RED_ON_BLACK += "--O-----\n";
+// RED_ON_BLACK += "--X-----\n";
 
 
 var assert = function(test, failMessage) {
